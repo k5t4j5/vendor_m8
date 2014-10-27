@@ -37,5 +37,32 @@ LOCAL_MODULE_CLASS := APPS
 LOCAL_CERTIFICATE := platform
 include $(BUILD_PREBUILT)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE := htcirlibs
+LOCAL_SRC_FILES := proprietary/framework/htcirlibs.jar
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_SUFFIX := .jar
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := CIRModule
+LOCAL_SRC_FILES := proprietary/app/CIRModule.apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE		:= libhtcirinterface_jni
+LOCAL_MODULE_TAGS	:= optional
+LOCAL_MODULE_CLASS	:= SHARED_LIBRARIES
+LOCAL_SRC_FILES		:= proprietary/lib/libhtcirinterface_jni.so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_PATH	:= $(TARGET_OUT_SHARED_LIBRARIES)
+include $(BUILD_PREBUILT)
+
 endif
 
