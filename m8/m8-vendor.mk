@@ -22,4 +22,7 @@ PRODUCT_PACKAGES += \
     htcirlibs \
     libhtcirinterface_jni
 
+PRODUCT_BOOT_JARS += \
+    htcirlibs
+
 $(call inherit-product, vendor/htc/m8/m8-vendor-blobs.mk)
